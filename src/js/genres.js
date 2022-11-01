@@ -42,4 +42,4 @@ const genresUkr = [
   { id: 37, name: 'Вестерн' },
 ];
 
-export default genresAll = { genresEn, genresUkr };
+export { genresEn, genresUkr };
