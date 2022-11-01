@@ -50,6 +50,7 @@ const genresUkr = [
 ];
 
 let genresAll = { genresEn, genresUkr };
+// console.log(genresAll.genresUkr);
 let genres = genresAll.genresEn;
 
 function onEnClick() {
@@ -98,6 +99,7 @@ async function fetchGenres(language) {
 const searchGenresName = ids => {
   let genresNamesArr = [];
   const searchId = ids;
+  let elGenreName;
   // console.log(searchId);
 
   for (var i = 0; i < ids.length; i++) {
