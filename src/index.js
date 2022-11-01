@@ -1,10 +1,9 @@
-// import genresAll from './js/genres.js';
-// import movieCard from './templates/card.hbs';
+const gallery = document.querySelector('.gallery');
+const btnEn = document.querySelector('#en');
+const btnUk = document.querySelector('#uk');
 
-// console.log(genresAll.genresUkr);
-// console.dir(movieCard());
-
-// -------- Static genres --------------- //
+btnEn.addEventListener('click', onEnClick);
+btnUk.addEventListener('click', onUkClick);
 
 const genresEn = [
   { id: 28, name: 'Action' },
@@ -49,17 +48,9 @@ const genresUkr = [
   { id: 10752, name: 'Військовий' },
   { id: 37, name: 'Вестерн' },
 ];
+
 let genresAll = { genresEn, genresUkr };
-
 let genres = genresAll.genresEn;
-
-// -------------------------------------
-const gallery = document.querySelector('.gallery');
-const btnEn = document.querySelector('#en');
-const btnUk = document.querySelector('#uk');
-
-btnEn.addEventListener('click', onEnClick);
-btnUk.addEventListener('click', onUkClick);
 
 function onEnClick() {
   gallery.innerHTML = '';
@@ -98,6 +89,7 @@ async function fetchGenres(language) {
       console.log(error);
     });
 }
+
 // console.log(genres);
 
 // let ids = 37;
@@ -134,7 +126,11 @@ async function fetchApi(language) {
       console.log(data);
       const markup = await data.results
         .map(item => {
+          // src = `'https://image.tmdb.org/t/p/w500${item.poster_path}'`;
+          console.log(item.img);
           // console.log(item.genre_ids);
+          // console.log(movieCard());
+          // return movieCard(data.results);
           return `<li class='gallery-item'>
             <img src='https://image.tmdb.org/t/p/w500${
               item.poster_path
