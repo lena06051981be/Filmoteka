@@ -54,9 +54,6 @@ async function fetchGenres(language) {
 
 // console.log(genres);
 
-// let ids = 37;
-// console.log(ids);
-
 const searchGenresName = ids => {
   let genresNamesArr = [];
   const searchId = ids;
